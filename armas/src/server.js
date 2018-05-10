@@ -3,7 +3,7 @@
 
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('postgres://armando:tanques50@localhost:5432/armas');
+const sequelize = new Sequelize('postgres://angel:tanques50@35.227.59.176:5432/armas');
 sequelize
   .authenticate()
   .then(() => {
@@ -25,7 +25,7 @@ const Productos = sequelize.define('productos', {
 		type: Sequelize.FLOAT
 	},
 	exist: {
-		type: Sequelize.FLOAT
+		type: Sequelize.INTEGER
 	  }
   });
   
