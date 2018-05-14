@@ -101,7 +101,7 @@ export default {
   methods: {
  
   getproducts() {
-    axios.get('http://35.227.59.176:8080/api/products')
+    axios.get('http://127.0.0.1:8080/api/products')
     .then(response => {
       // JSON responses are automatically parsed.
       this.posts = response.data
@@ -126,7 +126,7 @@ export default {
 
   addProduct() {
     alert(this.product.categoria + this.product.nombre + this.product.precio + this.product.exist);
-    axios.post('http://35.227.59.176:8080/api/products',  this.product)
+    axios.post('http://127.0.0.1:8080/api/products',  this.product)
     .then(response => {
       alert("status: " + response.status + ", inserted: " + JSON.stringify(response.data));
     })
@@ -138,7 +138,7 @@ export default {
   updateProduct() {
     //alert(idproduct);
     alert(this.product.id);
-    axios.put('http://35.227.59.176:8080/api/products/' + this.product.id,
+    axios.put('http://127.0.0.1:8080/api/products/' + this.product.id,
       this.product)
     .then(response => {
       alert("status: " + response.status + ", updated: " + JSON.stringify(response.data));
@@ -154,7 +154,7 @@ export default {
   deleteProduct(idproduct) {
     alert("delete" + idproduct);
     
-    axios.delete('http://35.227.59.176:8080/api/products/' + idproduct)
+    axios.delete('http://127.0.0.1:8080/api/products/' + idproduct)
     .then(response => {
 
       alert("status: " + response.status + ", deleted: " + JSON.stringify(response.data));
